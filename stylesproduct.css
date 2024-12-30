@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    background-color: #F5F5DC;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #282119;
+    padding: 5px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/*----- Logo -----*/
+.logo img {
+    height: 60px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    margin-right: 35px;
+}
+
+.cart-logo {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+.cart-logo:hover {
+    opacity: 0.8; 
+}
+
+/*----- Các liên kết điều hướng (nav links) -----*/
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/*----- Icon Menu (hiển thị trên thiết bị nhỏ) -----*/
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 0 50px 0 auto;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+@media (max-width: 858px) {
+    .menu-icon {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-75%);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 54px;
+        left: -100%;
+        width: 45%;
+        height: 100vh;
+        background-color: #3E2723;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.5s ease;
+    }
+
+    #nav-toggle:checked + .menu-icon + .nav-links {
+        left: 0;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+        padding: 20px;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+/*----- Nút đăng nhập và đăng ký -----*/
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .register-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: white;
+    color: #282119;
+}
+
+.auth-icon {
+    display: none;
+}
+
+@media (max-width: 680px) {
+    .login-btn, .register-btn {
+        display: none; /* Ẩn các nút */
+    }
+
+    .auth-icon {
+        display: inline-block; /* Hiển thị icon */
+    }
+}
+
+
+/*----- Thông tin người dùng sau khi đăng nhập -----*/
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.user-info .user-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Merriweather', serif;
+    transition: color 0.3s ease;
+}
+
+.user-info .user-link:hover {
+    color: #ddd;
+}
+
+.user-info .logout-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.user-info .logout-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user-info .logout-btn:hover .logout-icon {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .user-info {
+        justify-content: center; 
+        padding: 8px;
+    }
+    
+    .user-info .user-link, 
+    .user-info .logout-btn {
+        font-size: 14px; 
+    }
+    
+    .user-info .logout-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-info {
+        gap: 10px;
+    }
+
+    .user-info .user-link, 
+    .user-info .logout-btn {
+        font-size: 13px;
+    }
+}
+
+main {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.main-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-details {
+    flex: 1;
+    margin-left: 40px;
+    padding: 20px;
+    background-color: #fff5e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-gallery, .product-details {
+    flex: 1;
+}
+
+.brand-name {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.product-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.product-rating span {
+    font-size: 1.2rem;
+    color: gold;
+}
+
+.product-rating a {
+    font-size: 0.9rem;
+    color: #555;
+    text-decoration: underline;
+}
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.add-to-cart-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #c0392b;
+}
+
+.wishlist-btn {
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.wishlist-btn:hover {
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .product-gallery {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .product-details {
+        margin-left: 0;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+    }
+
+    .related-products h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        padding: 10px;
+    }
+
+    .product-title {
+        font-size: 1.8rem;
+    }
+
+    .product-price {
+        font-size: 1.3rem;
+    }
+
+    .add-to-cart-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+.related-products {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.related-products h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.related-product-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.related-product-item {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.related-product-item:hover {
+    transform: translateY(-5px);
+}
+
+.related-product-item img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .related-product-grid {
+        flex-direction: column;
+    }
+
+    .related-product-item {
+        margin: 0 auto 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .related-products {
+        padding: 15px;
+    }
+
+    .related-product-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #282119;
+    color: #CC8363;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #C27535;
+    font-family: 'Dancing Script', cursive;
+}
+
+.footer-section p, .footer-section ul li {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #FBEDC3;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #CC8363;
+    text-decoration: none; 
+    font-size: 1.2em;
+}
+
+.social-links a {
+    color: #CC8363;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #C27535;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #CC8363;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #FBEDC3;
+    font-family: 'Merriweather', serif;
+}

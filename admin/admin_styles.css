@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f5f7;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    height: 100px;
+    width: 100vw;
+    background-color: #fff;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Content */
+.admin-content {
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Sidebar */
+.admin-content-left {
+    background-color: #24292e;
+    width: 20%;
+    height: 100vh;
+    padding: 30px 0 0 12px;
+    color: #fff;
+}
+
+.admin-content-left ul, li {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.admin-content-left li, a {
+    font-weight: bold;
+    color: #d1d5db;
+    transition: color 0.3s ease;
+}
+
+.admin-content-left a:hover {
+    color: #4CAF50;
+}
+
+.admin-content-left ul ul {
+    margin-left: 20px;
+}
+
+/* Right Section */
+.admin-content-right {
+    width: 80%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Category */
+.right-add-category {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.right-add-category h1 {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.right-add-category input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.right-add-category button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.right-add-category button:hover {
+    background-color: #388E3C;
+}
+
+/* Category Table */
+.right-category-list {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.right-category-list h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.right-category-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.right-category-list table thead tr {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.right-category-list table th,
+.right-category-list table td {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 15px;
+}
+
+.right-category-list table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.right-category-list table a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.right-category-list table a:hover {
+    color: #388E3C;
+}
+
+/* Add Product */
+.right-add-product {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.right-add-product h1 {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.right-add-product label {
+    font-size: 16px;
+    color: #555;
+}
+
+.right-add-product span {
+    color: red;
+}
+
+.right-add-product form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-add-product input[type="text"],
+.right-add-product select,
+.right-add-product textarea,
+.right-add-product input[type="file"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.right-add-product textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.right-add-product button {
+    width: 150px;
+    padding: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.right-add-product button:hover {
+    background-color: #388E3C;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.pagination a.active {
+    background-color: #5cb85c;
+    color: white;
+    border-color: #5cb85c;
+    cursor: default;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+

@@ -1,0 +1,481 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: Merriweather;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #282119;
+    padding: 5px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+/*----- Logo -----*/
+.logo img {
+    height: 60px;
+}
+
+/*----- Các icon trong Header (đăng nhập và giỏ hàng) -----*/
+.header-icons {
+    display: flex;
+    gap: 20px;
+    margin-right: 35px;
+}
+
+.cart-logo {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+.cart-logo:hover {
+    opacity: 0.8; 
+}
+
+/*----- Các liên kết điều hướng (nav links) -----*/
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.nav-links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/*----- Icon Menu (hiển thị trên thiết bị nhỏ) -----*/
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    margin: 0 50px 0 auto;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+@media (max-width: 858px) {
+    .menu-icon {
+        display: block;
+        margin-left: 10px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-75%);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 54px;
+        left: -100%;
+        width: 45%;
+        height: 100vh;
+        background-color: #3E2723;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.5s ease;
+    }
+
+    #nav-toggle:checked + .menu-icon + .nav-links {
+        left: 0;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+        padding: 20px;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+/*----- Nút đăng nhập và đăng ký -----*/
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .register-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: white;
+    color: #282119;
+}
+
+.auth-icon {
+    display: none;
+}
+
+@media (max-width: 680px) {
+    .login-btn, .register-btn {
+        display: none; /* Ẩn các nút */
+    }
+
+    .auth-icon {
+        display: inline-block; /* Hiển thị icon */
+    }
+}
+
+
+/*----- Thông tin người dùng sau khi đăng nhập -----*/
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* CSS cho tên người dùng */
+.user-info .user-link {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Merriweather', serif;
+}
+
+/* Nút logout */
+.user-info .logout-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Icon logout */
+.user-info .logout-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user-info .logout-btn:hover .logout-icon {
+    transform: scale(1.1);
+}
+
+.cart-content {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+img {
+    border-radius: 4px;
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quantity-form input[type="number"] {
+    width: 60px;
+    text-align: center;
+}
+
+.quantity-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.order-summary {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.order-summary h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cart-actions button {
+    width: 100%; 
+    max-width: 200px; 
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.cart-actions button:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.order-more-btn, .checkout-btn {
+    background-color: #6c757d;
+}
+
+.order-more-btn:hover, .checkout-btn:hover {
+    background-color: #5a6268;
+}
+
+.remove-btn {
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    color: #c0392b;
+}
+
+fieldset {
+    border: none;
+    border-bottom: 3px solid #76290B;
+    padding: 2rem 0;
+    margin-bottom: 20px;
+}
+
+/* Responsive - điều chỉnh ở màn hình nhỏ */
+@media (max-width: 768px) {
+    .cart-content {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .quantity-form input[type="number"] {
+        width: 50px;
+    }
+
+    .order-summary {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .order-summary h2 {
+        font-size: 20px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cart-actions button {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .quantity-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quantity-form button {
+        font-size: 14px;
+    }
+
+    th, td {
+        font-size: 12px;
+    }
+
+    .order-summary h2 {
+        font-size: 18px;
+    }
+
+    .order-summary p {
+        font-size: 12px;
+    }
+
+    .cart-actions button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+.message {
+    padding: 15px;
+    margin: 20px;
+    border: 1px solid #5cb85c;
+    color: #3c763d;
+    background-color: #dff0d8;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: #282119;
+    color: #CC8363;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #C27535;
+    font-family: 'Dancing Script', cursive;
+}
+
+.footer-section p, .footer-section ul li {
+    font-size: 1em;
+    line-height: 1.8;
+    color: #FBEDC3;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #CC8363;
+    text-decoration: none; 
+    font-size: 1.2em;
+}
+
+.social-links a {
+    color: #CC8363;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #C27535;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    border-top: 1px solid #CC8363;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #FBEDC3;
+    font-family: 'Merriweather', serif;
+}
