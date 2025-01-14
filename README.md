@@ -40,6 +40,6 @@ Bạn cần cài:
   Khởi động server:
       Đặt mã nguồn vào thư mục gốc của server (ví dụ: htdocs nếu dùng XAMPP).
   Xem thử thành quả:
-      Mở trình duyệt, gõ http://localhost/cafe-serenade là xong!
+      Mở trình duyệt, gõ http://localhost/Coffe là xong!
 
 Cảm ơn bạn đã ghé thăm! ❤️ Chúc bạn một ngày ngập tràn hương vị cà phê. ☕
