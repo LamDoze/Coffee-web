@@ -23,3 +23,23 @@ Chào mừng bạn đến với **Cafe Serenade** – nơi bạn có thể khám
   - MySQL (lưu trữ thông tin như danh sách sản phẩm, người dùng, bài viết, v.v.).  
 
 ![image](https://github.com/user-attachments/assets/884a7633-0182-4c57-bf85-1ebe1eb53b22)
+
+## 🚀 Làm sao để chạy trang web?
+### 1. Chuẩn bị trước
+Bạn cần cài:  
+- Máy chủ web (XAMPP, WAMP hoặc tương tự).  
+- MySQL để quản lý dữ liệu.  
+
+### 2. Bắt tay vào làm
+1. **Clone về máy**:  
+   ```bash
+   git clone https://github.com/username/cafe-serenade.git
+
+  Cài database:
+      Vào thư mục database, import file SQL vào MySQL.
+  Khởi động server:
+      Đặt mã nguồn vào thư mục gốc của server (ví dụ: htdocs nếu dùng XAMPP).
+  Xem thử thành quả:
+      Mở trình duyệt, gõ http://localhost/cafe-serenade là xong!
+
+Cảm ơn bạn đã ghé thăm! ❤️ Chúc bạn một ngày ngập tràn hương vị cà phê. ☕
