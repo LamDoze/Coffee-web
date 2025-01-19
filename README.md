@@ -8,7 +8,7 @@ Chào mừng bạn đến với **Cafe Serenade** – nơi bạn có thể khám
 ## ✨ Có gì hấp dẫn ở đây?
 - **Trang chủ:** Nơi "show hàng" những sản phẩm hot nhất và tin tức mới nhất từ Cafe Serenade.  
 - **Giới thiệu:** Nghe câu chuyện của quán – tại sao mình mê cà phê đến vậy.  
-- **Sản phẩm:** Danh sách đầy đủ các loại cà phê siêu chất với hình ảnh, giá cả và chi tiết rõ ràng.  
+- **Sản phẩm:** Danh sách đầy đủ các loại cà phê siêu chất với hìnvà chi tiết rõ ràng.  
 - **Blog:** Góc chia sẻ bí kíp pha cà phê, fun facts và các tips thú vị.  
 - **Liên hệ:** Có gì cần giúp? Cứ inbox tụi mình nhé!  
 
