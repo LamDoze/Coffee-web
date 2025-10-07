@@ -10,7 +10,7 @@ Chào mừng bạn đến với **Cafe Serenade** – nơi bạn có thể khám
 - **Giới thiệu:** Nghe câu chuyện của quán – tại sao mình mê cà phê đến vậy.  
 - **Sản phẩm:** Danh sách đầy đủ các loại cà phê siêu chất với hình ảnh, giá cả và chi tiết rõ ràng.  
 - **Blog:** Góc chia sẻ bí kíp pha cà phê, fun facts và các tips thú vị.  
-- **Liên hệ:** Có gì cần giúp? Cứ inbox tụi mình nhé!  
+- **Liên hệ:** Có gì cần giúp? Ib :D
 
 ---
 
@@ -43,3 +43,4 @@ Bạn cần cài:
       Mở trình duyệt, gõ http://localhost/Coffe là xong!
 
 Cảm ơn bạn đã ghé thăm! ❤️ Chúc bạn một ngày ngập tràn hương vị cà phê. ☕
+
